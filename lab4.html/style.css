@@ -1,0 +1,250 @@
+/* ==========================================
+   ЗАВДАННЯ №1
+   ========================================== */
+
+/* 1.2 Універсальний селектор (*) задає Arial, 20px, letter-spacing: 40px */
+.lab1-page * {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  letter-spacing: 40px;
+}
+
+/* 1.3 Селектор тегу p: зелений колір і вирівнювання по центру */
+.lab1-page p {
+  color: green;
+  text-align: center;
+  letter-spacing: normal;
+}
+
+/* 1.3 Селектор тегу div: вирівнювання по ширині */
+.lab1-page div {
+  text-align: justify;
+  letter-spacing: normal;
+  margin-bottom: 25px;
+}
+
+/* 1.4 Селектор класу: червоний колір для 1-го і 3-го абзаців */
+.lab1-page .red-text {
+  color: red;
+}
+
+/* 1.5 Селектор класу: заборона переносу рядка */
+.lab1-page .no-wrap {
+  white-space: nowrap;
+}
+
+/* 1.6 Селектор id: курсив та жирний */
+.lab1-page #italic-bold {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* 1.7 Селектор класу для тіні: зміщення 5px вправо, -5px вгору, розмиття 3px, червоний колір тіні */
+.lab1-page .text-shadow-box {
+  text-shadow: 5px -5px 3px rgba(215, 60, 60, 0.85);
+}
+
+/* 1.8 Селектор класу для 1-го div: перекреслений, uppercase, відступ 50px */
+.lab1-page .div-style-1 {
+  text-decoration: line-through;
+  text-transform: uppercase;
+  text-indent: 50px;
+  letter-spacing: normal;
+  color: black;
+}
+
+/* 1.9 Селектор класу для 2-го div: чорний текст, інтервал символів 30px, слів 50px */
+.lab1-page .div-style-2 {
+  color: black;
+  letter-spacing: 30px !important;
+  word-spacing: 50px;
+}
+
+/* ==========================================
+   ЗАВДАННЯ №2 (Рецепт з Лабораторної №2)
+   ========================================== */
+.recipe-block {
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: normal;
+  line-height: 1.6;
+}
+
+.recipe-block h1 {
+  font-size: 28px;
+}
+
+.recipe-block mark {
+  background-color: #d4e157;
+  color: black;
+}
+ .recipe-block { 
+  text-align: center; 
+  border: 1px solid #9999dd; 
+  padding: 10px; 
+}
+.recipe-block h1 { 
+  color: red; 
+  font-size: 28px; 
+}           /* селектор тегу */
+#products { 
+  font-style: italic; 
+  font-weight: bold; 
+}        /* селектор id */
+.recipe-block p { 
+  font-size: 14px; 
+}
+.recipe-block strong { 
+  font-size: 16px; }
+.recipe-block hr { 
+  width: 60%; 
+  height: 4px; 
+  border: 0; 
+  background: green; 
+  margin: 15px auto; }
+.recipe-block .note { 
+  font-family: 'Courier New', monospace; 
+  font-style: italic; 
+}  /* клас */
+/* ==========================================
+   ЗАВДАННЯ №3 (Меню та списки)
+   ========================================== */
+a {
+  color: purple;
+}
+
+.main-link {
+  color: green;
+}
+
+.square-marker {
+  list-style-type: square;
+}
+
+.icon-marker {
+  list-style-image: url('img/icon.png');
+}
+
+ul li ul {
+  list-style-type: none;
+}
+
+.square-marker a {
+  text-decoration: none;
+}
+
+.inside-order {
+  list-style-position: inside;
+}
+
+/* ==========================================
+   ЗАВДАННЯ №4 (За абсолютно точним зразком)
+   ========================================== */
+
+.lab4-page, .lab4-page * {
+  letter-spacing: normal !important;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.lab4-page {
+  padding: 20px;
+  line-height: 1.5;
+  color: black;
+}
+
+.lab4-page h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+/* 4.1 Перший абзац під "Інформація" з червоною тінню і жирним курсивним підкресленим span */
+.lab4-page p.shadow-p {
+  text-shadow: 2px 2px 3px rgba(215, 60, 60, 0.7);
+}
+
+.lab4-page p.shadow-p span {
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* 4.2 span у div.text-background: жовтий фон, чорний текст, жирний курсив з підкресленням */
+.lab4-page div.text-background span {
+  background-color: #ffff00;
+  color: black !important;
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* 4.3 span всередині span: темно-сірий фон, ЧОРНИЙ текст, перекреслений */
+.lab4-page span span {
+  background-color: #666666;
+  color: black !important;
+  text-decoration: line-through;
+  padding: 0 4px;
+}
+
+/* 4.4 span у span в ol: 18px, верхній реєстр */
+.lab4-page ol span span {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+/* 4.5 section > p: відступ першого рядка 50px, червона тінь, span — жирний курсив */
+.lab4-page section > p {
+  text-indent: 50px;
+  text-shadow: 2px 2px 3px rgba(215, 60, 60, 0.7);
+}
+
+.lab4-page section > p span {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* 4.6 li > ul: вкладений список із маркером-гачком */
+.lab4-page li > ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.lab4-page li > ul > li::before {
+  content: "✓ ";
+  font-weight: bold;
+}
+
+/* 4.7 div > p.text-background: інтервал між словами 50px */
+.lab4-page div > p.text-background {
+  word-spacing: 50px;
+}
+
+/* 4.8 .text-bold > p: жирний текст для прямих p */
+.lab4-page .text-bold > p {
+  font-weight: bold;
+}
+
+/* 4.9 .text-bold > section > p: міжрядковий інтервал 45px */
+.lab4-page .text-bold > section > p {
+  line-height: 45px;
+}
+
+/* 4.10 img + p: бордовий фон, ЧОРНИЙ текст */
+.lab4-page img + p {
+  background-color: #8b0000;
+  color: black !important;
+  padding: 6px 10px;
+  margin: 10px 0;
+}
+
+/* 4.11 Абзаци з відступом 50px та червоною тінню тексту */
+.lab4-page p.indent-p {
+  text-indent: 50px;
+  text-shadow: 2px 2px 3px rgba(215, 60, 60, 0.7);
+}
+
+/* Червоний колір тексту */
+.lab4-page .red-text {
+  color: red !important;
+  font-weight: bold;
+}

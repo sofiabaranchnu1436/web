@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Останні новини</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #faf9f7; margin: 0; padding: 12px; }
+        header, article, aside, footer { background: #fff; border: 1px solid #ddd; border-radius: 12px; padding: 16px 24px; margin-bottom: 12px; }
+        nav a { margin-right: 16px; color: #444; text-decoration: none; }
+        .layout { display: flex; gap: 12px; align-items: flex-start; }
+        main { flex: 3; }
+        aside { flex: 1; }
+        time { color: #777; font-size: 0.9em; }
+        footer { text-align: center; }
+        address { font-style: normal; }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Останні новини</h1>
+    <nav>
+        <a href="#">Головна</a>
+        <a href="#">Новини</a>
+        <a href="#">Контакти</a>
+    </nav>
+</header>
+
+<div class="layout">
+    <main>
+        <article>
+            <h2>Відкрито новий кампус університету</h2>
+            <p><time datetime="2026-09-01">1 вересня 2026</time></p>
+            <p>Сьогодні відбулося урочисте відкриття нового кампусу університету. Студенти отримали сучасні аудиторії, лабораторії та простір для відпочинку. Навчання в нових корпусах розпочнеться вже цього тижня.</p>
+            <p><strong>Автор: Ірина Коваль</strong></p>
+        </article>
+
+        <article>
+            <h2>Стартував конкурс студентських проєктів</h2>
+            <p><time datetime="2026-09-05">5 вересня 2026</time></p>
+            <p>До участі в конкурсі запрошуються студенти всіх курсів і спеціальностей. Заявки приймаються до 30 вересня в електронному вигляді. Проєкти можна подавати як індивідуально, так і командою до п'яти осіб.</p>
+            <p><strong>Автор: Олег Петренко</strong></p>
+        </article>
+
+        <article>
+            <h2>Результати літньої практики</h2>
+            <p><time datetime="2026-09-10">10 вересня 2026</time></p>
+            <p>Цього літа понад двісті студентів пройшли практику в партнерських компаніях. Більшість учасників отримали позитивні відгуки від роботодавців. Дехто з практикантів уже отримав пропозиції про постійну роботу.</p>
+            <p><strong>Автор: Марія Шевчук</strong></p>
+        </article>
+    </main>
+
+    <aside>
+        <h2>Популярне</h2>
+        <ul>
+            <li><a href="#">Новина 1</a></li>
+            <li><a href="#">Новина 2</a></li>
+            <li><a href="#">Новина 3</a></li>
+            <li><a href="#">Новина 4</a></li>
+        </ul>
+    </aside>
+</div>
+
+<footer>
+    <hr>
+    <p>&copy; 2026 Останні новини</p>
+    <address>Прізвище Ім'я По батькові, гр. XX-00 &middot;
+        <a href="mailto:student@example.com">student@example.com</a></address>
+</footer>
+</body>
+</html>

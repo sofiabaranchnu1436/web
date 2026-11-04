@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №5 — Завдання 6</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="task6-body">
+
+    <!-- Контейнер main (max-width: 900px, min-width: 320px, margin: 0 auto) -->
+    <main class="card-container">
+        <h1>Сайт-візитівка (Завдання 6)</h1>
+
+        <!-- 1. Блок «Теги» (display) -->
+        <section class="card-section">
+            <h2>1. Демонстрація властивості display</h2>
+
+            <h3>Div елементи (display: inline):</h3>
+            <div class="inline-div">Div 1</div>
+            <div class="inline-div">Div 2</div>
+            <div class="inline-div">Div 3</div>
+            <div class="inline-div">Div 4</div>
+            <div class="inline-div">Div 5</div>
+
+            <h3>Span елементи (display: block):</h3>
+            <span class="block-span">Span 1</span>
+            <span class="block-span">Span 2</span>
+            <span class="block-span">Span 3</span>
+            <span class="block-span">Span 4</span>
+            <span class="block-span">Span 5</span>
+        </section>
+
+        <!-- 2. Блок «Повторення фону» (background-repeat) -->
+        <section class="card-section">
+            <h2>2. Демонстрація background-repeat</h2>
+
+            <div class="repeat-box bg-repeat-x">
+                <span class="badge">background-repeat: repeat-x</span>
+            </div>
+            <div class="repeat-box bg-repeat-y">
+                <span class="badge">background-repeat: repeat-y</span>
+            </div>
+            <div class="repeat-box bg-repeat-space">
+                <span class="badge">background-repeat: space</span>
+            </div>
+            <div class="repeat-box bg-repeat-round">
+                <span class="badge">background-repeat: round</span>
+            </div>
+        </section>
+
+       <!-- 3. Блок «Масштабування» (background-size) -->
+<section class="card-section">
+    <h2>3. Демонстрація background-size (contain vs cover)</h2>
+    
+    <div class="size-group">
+        <div class="size-box bg-contain">
+            <span class="badge">background-size: contain</span>
+        </div>
+        <div class="size-box bg-cover">
+            <span class="badge">background-size: cover</span>
+        </div>
+    </div>
+</section>
+
+        <!-- 4. Блок «Прокручення фону» (background-attachment) -->
+        <section class="card-section">
+            <h2>4. Демонстрація background-attachment (scroll vs local)</h2>
+            
+            <div class="attach-group">
+                <div class="attach-box bg-scroll">
+                    <h3>background-attachment: scroll</h3>
+                    <p>
+                        Це довгий текст для перевірки прокручування всередині блоку.
+                        При значенні scroll фонове зображення фіксується відносно самого блоку-контейнера.
+                        Коли ви прокручуєте текстовий вміст всередині даного блоку за допомогою смуги прокрутки,
+                        фон залишається нерухомим на місці і НЕ прокручується разом із текстом.
+                        Проте якщо прокручувати всю веб-сторінку повністю, фон переміщуватиметься разом із блоком.
+                    </p>
+                </div>
+
+                <div class="attach-box bg-local">
+                    <h3>background-attachment: local</h3>
+                    <p>
+                        Це довгий текст для перевірки прокручування всередині блоку.
+                        При значенні local фонове зображення прив'язується безпосередньо до вмісту елемента.
+                        Якщо елемент має власний оверфлоу з прокруткою (overflow: auto), фонова картинка
+                        буде плавно прокручуватися разом із текстом усередині цього блоку.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

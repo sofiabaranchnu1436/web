@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота — Завдання 5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="task5-body">
+
+    <h1>Завдання 5. Демонстрація box-sizing, overflow та display</h1>
+
+    <!-- Частина 1: box-sizing -->
+    <section class="task-section">
+        <h2>1. Демонстрація box-sizing</h2>
+        <div class="box-demo box-content">
+            <strong>box-sizing: content-box</strong><br>
+            width: 300px; padding: 20px; border: 5px solid;<br>
+            <em>Загальна реальна ширина елемента: 350px</em><br>
+            (300px + 2×20px padding + 2×5px border = 350px)
+        </div>
+        <div class="box-demo box-border">
+            <strong>box-sizing: border-box</strong><br>
+            width: 300px; padding: 20px; border: 5px solid;<br>
+            <em>Загальна реальна ширина елемента: 300px</em><br>
+            (відступи та рамка включені у ширину 300px)
+        </div>
+    </section>
+
+    <!-- Частина 2: overflow -->
+    <section class="task-section">
+        <h2>2. Демонстрація overflow</h2>
+        <div class="overflow-container">
+            <div class="overflow-box overflow-visible">
+                <strong>overflow: visible;</strong><br>
+                Текст виходить за межі блоку і залишається повністю видимим для користувача. Властивість CSS overflow керує відображенням вмісту блокового елемента, якщо він перевищує задані розміри.
+            </div>
+            <div class="overflow-box overflow-hidden">
+                <strong>overflow: hidden;</strong><br>
+                Увесь текст, який не поміщається в блок по висоті, обрізається та повністю приховується за його межами без можливості прокрутки.
+            </div>
+            <div class="overflow-box overflow-scroll">
+                <strong>overflow: scroll;</strong><br>
+                Смуги прокручування додаються до блоку в обов'язковому порядку (як вертикальна, так і горизонтальна), незалежно від того, чи перевищує вміст розміри блоку.
+            </div>
+            <div class="overflow-box overflow-auto">
+                <strong>overflow: auto;</strong><br>
+                Смуга прокручування з'являється автоматично тільки тоді, коли вміст дійсно перевищує задану максимальну висоту max-height.
+            </div>
+        </div>
+    </section>
+
+    <!-- Частина 3: display -->
+    <section class="task-section">
+        <h2>3. Горизонтальне меню (display)</h2>
+        <ul class="task-nav">
+            <li><a href="#">Головна</a></li>
+            <li><a href="#">Про нас</a></li>
+            <li><a href="#">Послуги</a></li>
+            <li class="hidden-menu-item"><a href="#">Новини</a></li>
+            <li><a href="#">Контакти</a></li>
+        </ul>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,810 @@
+/* ==========================================================================
+   Лабораторна робота №5 — Завдання 1 (Структура за табл. 1 та схемою)
+   ========================================================================== */
+
+/* Скидання замовчуваних відступів та маркерів */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 1. Зовнішній div (помаранчевий контейнер) */
+.travel-container {
+    background-color: rgb(255, 165, 0);
+    width: 500px;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+}
+
+/* 2. Заголовок h1 */
+.travel-container h1 {
+    font-size: 26px;
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+/* 3. ul 1-го рівня (темно-зелений контейнер) */
+ul.main-list {
+    background-color: rgb(103, 158, 128);
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* li 1-го рівня: іконка чекліста зліва */
+ul.main-list > li.item-checklist {
+    background-image: url('icons/checklist.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 32px 32px;
+    padding-left: 45px; /* Зсув вмісту вправо від іконки checklist */
+    margin-bottom: 20px;
+}
+
+ul.main-list > li.item-checklist:last-child {
+    margin-bottom: 0;
+}
+
+/* span 1-го рівня (рожево-коричнева плашка) */
+span.title-first-level {
+    display: inline-block;
+    background-color: rgb(199, 124, 106);
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+/* 4. ul 2-го рівня (окремий світло-зелений блок-контейнер) */
+ul.sub-list {
+    background-color: rgb(153, 180, 102);
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* li 2-го рівня (рядки всередині світло-зеленого блоку) */
+ul.sub-list > li {
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 28px 28px;
+    padding-left: 45px; /* Відступ під іконку елемента 2-го рівня */
+    margin-bottom: 8px;
+}
+
+ul.sub-list > li:last-child {
+    margin-bottom: 0;
+}
+
+/* span 2-го рівня (помаранчеві плашки) */
+ul.sub-list > li > span {
+    display: inline-block;
+    background-color: rgb(218, 106, 32);
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
+    padding: 8px 18px;
+}
+
+/* ==========================================================================
+   Прив'язка іконок елементів 2-го рівня (папка icons/)
+   ========================================================================== */
+
+li.item-route    { background-image: url('icons/route.png'); }
+li.item-flight   { background-image: url('icons/flight.png'); }
+li.item-hotel    { background-image: url('icons/hotel.png'); }
+li.item-car      { background-image: url('icons/car.png'); }
+li.item-bar      { background-image: url('icons/bar.png'); }
+li.item-casino   { background-image: url('icons/casino.png'); }
+li.item-museum   { background-image: url('icons/museum.png'); }
+li.item-festival { background-image: url('icons/festival.png'); }
+
+/* ==========================================================================
+   Завдання 2. Таблиця (Стилізація БЕЗ класів та id)
+   ========================================================================== */
+
+/* Загальні налаштування таблиці */
+table {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    border-collapse: separate;
+    border-spacing: 2px; /* Білі розділювальні лінії між комірками як на зразку */
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Загальні стилі для комірок */
+th, td {
+    padding: 16px 20px;
+    font-size: 18px;
+}
+
+/* --------------------------------------------------------------------------
+   1. ШАПКА ТАБЛИЦІ (Градієнт від найсвітлішого до найтемнішого зліва направо)
+   -------------------------------------------------------------------------- */
+
+thead th:nth-child(1) {
+    background-color: #f1d4d4; /* Найсвітліший рожевий */
+    color: #ffffff;
+    font-weight: normal;
+}
+
+thead th:nth-child(2) {
+    background-color: #e3b0b0;
+    font-weight: bold;
+}
+
+thead th:nth-child(3) {
+    background-color: #d18d8d;
+    font-weight: bold;
+}
+
+thead th:nth-child(4) {
+    background-color: #923737;
+    font-weight: bold;
+}
+
+thead th:nth-child(5) {
+    background-color: #4a1919; /* Найтемніший коричнево-червоний */
+    font-weight: bold;
+}
+
+/* --------------------------------------------------------------------------
+   2. ПЕРШИЙ СТОВПЧИК (Назва опцій — коричнево-червоний колір)
+   -------------------------------------------------------------------------- */
+
+tbody td:first-child {
+    background-color: #ba4f4f;
+    text-align: left;
+    font-size: 19px;
+    padding-left: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   3. КОМІРКИ З ДАНИМИ (+ / -) ТА АВТОМАТИЧНЕ ЧЕРГУВАННЯ РЯДКІВ (ЗЕБРА)
+   Додавання нових рядків не порушує стилі
+   -------------------------------------------------------------------------- */
+
+/* Непарні рядки даних (1, 3, 5...) — темно-рожевий відтінок */
+tbody tr:nth-child(odd) td:not(:first-child) {
+    background-color: #e3b0b0;
+    color: #333333;
+}
+
+/* Парні рядки даних (2, 4, 6...) — світло-рожевий відтінок */
+tbody tr:nth-child(even) td:not(:first-child) {
+    background-color: #f4dede;
+    color: #333333;
+}
+
+/* Вирівнювання знаків + та - по центру */
+tbody td:not(:first-child) {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   Завдання 3. Стилізація форми анкети (lab4_3.html)
+   ========================================================================== */
+
+/* Загальні налаштування сторінки з формою */
+body.form-page-body {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #333333;
+    margin: 0;
+    padding: 30px 15px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Контейнер картки форми */
+.form-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 680px;
+    padding: 30px 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+}
+
+.form-card h1 {
+    color: #1e293b;
+    font-size: 26px;
+    margin-top: 0;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.form-description {
+    color: #64748b;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Налаштування груп полів fieldset */
+fieldset {
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: #f8fafc;
+}
+
+legend {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0f172a;
+    padding: 0 10px;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+}
+
+/* Блоки полів */
+.field-group {
+    margin-bottom: 18px;
+}
+
+.field-group:last-child {
+    margin-bottom: 0;
+}
+
+.field-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 6px;
+}
+
+/* Стилі для полів вводу, текстових областей та випадаючих списків */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 14px;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 6px rgba(37, 99, 235, 0.3);
+}
+
+/* Валідація форм при підсвічуванні */
+input:invalid:not(:placeholder-shown) {
+    border-color: #ef4444;
+}
+
+/* Радіокнопки та чекбокси */
+.option-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.option-list.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.option-list label {
+    font-weight: normal;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 0;
+}
+
+/* Кнопки */
+.form-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+button[type="submit"],
+button[type="reset"] {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button[type="submit"] {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+button[type="submit"]:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+button[type="reset"] {
+    background-color: #e2e8f0;
+    color: #475569;
+}
+
+button[type="reset"]:hover {
+    background-color: #cbd5e1;
+}
+
+/* ==========================================================================
+   Завдання 4. Градієнтні блоки (lab4_4.html)
+   ========================================================================== */
+
+/* Загальне оформлення сторінки для центрування блоків */
+body.task4-body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+    margin: 0;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Загальні вимоги до всіх 4-х блоків */
+.gradient-block {
+    display: inline-block;       /* Розташування в один ряд */
+    width: 300px;                /* Розмір 300px */
+    height: 200px;               /* Розмір 200px */
+    margin: 20px;                /* Зовнішній відступ 20px */
+    padding: 15px;               /* Внутрішній відступ 15px */
+    box-sizing: border-box;
+    vertical-align: top;
+    color: #ffffff;              /* Колір підпису */
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: left;            /* Підпис у середині блоку */
+}
+
+/* --------------------------------------------------------------------------
+   БЛОК 1: Діагональні смуги двох відтінків (лінійний градієнт 45deg)
+   -------------------------------------------------------------------------- */
+.gradient-block:nth-of-type(1) {
+    background-image: linear-gradient(
+        45deg,
+        #1e40af 25%,
+        #3b82f6 25%,
+        #3b82f6 50%,
+        #1e40af 50%,
+        #1e40af 75%,
+        #3b82f6 75%,
+        #3b82f6 100%
+    );
+    background-size: 40px 40px;
+}
+
+/* --------------------------------------------------------------------------
+   БЛОК 2: Фон у вигляді клітинок (два лінійних градієнти під 90deg з rgba)
+   -------------------------------------------------------------------------- */
+.gradient-block:nth-of-type(2) {
+    background-color: #1e3a8a; /* Базовий синій фон */
+    background-image: 
+        linear-gradient(transparent 50%, rgba(255, 255, 255, 0.25) 50%),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.25) 50%, transparent 50%);
+    background-size: 30px 30px;
+}
+
+/* --------------------------------------------------------------------------
+   БЛОК 3: Радіальний градієнт circle у точці 30px 20px (farthest-corner)
+   -------------------------------------------------------------------------- */
+.gradient-block:nth-of-type(3) {
+    background-image: radial-gradient(
+        circle farthest-corner at 30px 20px,
+        #93c5fd 0%,    /* 1-й колір */
+        #2563eb 40%,   /* 2-й колір */
+        #0f172a 90%    /* 3-й колір */
+    );
+}
+
+/* --------------------------------------------------------------------------
+   БЛОК 4: Напівпрозорий градієнт поверх суцільного кольору (bottom, 100% 50%)
+   -------------------------------------------------------------------------- */
+.gradient-block:nth-of-type(4) {
+    background-color: #0284c7; /* Суцільний кольоровий блок */
+    background-image: linear-gradient(to top, rgba(15, 23, 42, 0.8), transparent);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 50%;
+}
+/* ==========================================================================
+   Завдання 5. box-sizing, overflow, display (lab4_5.html)
+   ========================================================================== */
+
+/* Оформлення сторінки */
+body.task5-body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #0f172a;
+    margin: 0;
+    padding: 30px;
+}
+
+body.task5-body h1 {
+    text-align: center;
+    color: #1e293b;
+    margin-bottom: 30px;
+}
+
+.task-section {
+    background-color: #ffffff;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.task-section h2 {
+    color: #1e3a8a;
+    margin-top: 0;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   Частина 1: box-sizing
+   -------------------------------------------------------------------------- */
+.box-demo {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid #2563eb;
+    background-color: #dbeafe;
+    display: inline-block; /* Блоки розташовані в один ряд */
+    margin: 20px;          /* Зовнішній відступ 20px */
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #1e3a8a;
+}
+
+/* Перший блок з content-box */
+.box-content {
+    box-sizing: content-box;
+    /* Загальна ширина: 300 + 2*20 + 2*5 = 350px */
+}
+
+/* Другий блок з border-box */
+.box-border {
+    box-sizing: border-box;
+    /* Загальна ширина: 300px */
+}
+
+/* --------------------------------------------------------------------------
+   Частина 2: overflow
+   -------------------------------------------------------------------------- */
+.overflow-container {
+    margin-top: 20px;
+}
+
+.overflow-box {
+    display: inline-block;
+    width: 220px;
+    max-height: 80px;      /* Обмеження висоти */
+    border: 2px solid #334155;
+    background-color: #f8fafc;
+    padding: 10px;
+    margin-right: 15px;
+    margin-bottom: 40px;   /* Додатковий відступ знизу для overflow: visible */
+    vertical-align: top;
+    font-size: 13px;
+    line-height: 1.4;
+    box-sizing: border-box;
+}
+
+.overflow-visible {
+    overflow: visible;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-scroll {
+    overflow: scroll;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Частина 3: display (Горизонтальне меню без flex та float)
+   -------------------------------------------------------------------------- */
+ul.task-nav {
+    list-style: none; /* Маркери списку приховати */
+    margin: 20px 0 0 0;
+    padding: 0;
+    background-color: #1e293b;
+    font-size: 0;     /* Прибирає небажаний пробіл між inline-block елементами */
+}
+
+ul.task-nav > li {
+    display: inline-block; /* Елементи li — inline-block */
+    font-size: 16px;       /* Відновлюємо розмір шрифту */
+}
+
+ul.task-nav > li > a {
+    display: block;        /* Елементи a — display: block */
+    padding: 10px 20px;    /* Внутрішні відступи 10px 20px */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+ul.task-nav > li > a:hover {
+    background-color: #3b82f6;
+}
+
+/* 
+   Приховування елемента за допомогою display: none
+   
+   ПОЯСНЕННЯ ВІДМІННОСТІ:
+   1. display: none — повністю вилучає елемент із потоку документа. Елемент НЕ займає 
+      жодного місця на сторінці, і сусідні елементи зсуваються на його позицію.
+   2. visibility: hidden — робить елемент невидимим, але місце в потоці документа 
+      за ним зберігається (залишається порожній простір).
+   3. opacity: 0 — робить елемент повністю прозорим, зберігаючи його місце та 
+      можливість взаємодії (наприклад, кліки).
+*/
+ul.task-nav > li.hidden-menu-item {
+    display: none;
+}
+/* ==========================================================================
+   Завдання 6. Сайт-візитівка з фоновими зображеннями (lab4_6.html)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Фон сторінки (body)
+   -------------------------------------------------------------------------- */
+body.task6-body {
+    /* Запасний колір фону під час завантаження зображення */
+    background-color: #1b2a41;
+    /* Якісний темний фоновий пейзаж */
+    background-image: url('https://picsum.photos/id/1015/1920/1080');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* Фонове зображення залишається нерухомим при прокручуванні сторінки */
+    background-attachment: fixed;
+    
+    font-family: Arial, sans-serif;
+    color: #0f172a;
+    margin: 0;
+    padding: 30px 0;
+}
+
+/* --------------------------------------------------------------------------
+   2. Контейнер (main)
+   -------------------------------------------------------------------------- */
+main.card-container {
+    box-sizing: border-box;
+    max-width: 900px;
+    min-width: 320px;
+    margin: 0 auto; /* Центрування контейнера по горизонталі */
+    padding: 20px;
+    /* Напівпрозорий фон (rgba), щоб проглядалося фонове зображення body */
+    background-color: rgba(255, 255, 255, 0.92);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* 
+   ПОЯСНЕННЯ ЩОДО КОНТЕЙНЕРА (коли ширина вікна браузера ширша за 320px):
+   Коли ширина вікна браузера перевищує min-width (320px), контейнер є адаптивним:
+   його ширина плавно збільшується разом із розширенням вікна браузера до позначки 
+   max-width (900px). Як тільки ширина вікна перевищує 900px, ширина контейнера 
+   зафіксовується на рівні 900px, а за рахунок margin: 0 auto він залишається 
+   чітко по центру сторінки з однаковими відступами зліва та справа.
+*/
+
+main.card-container h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.card-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed #cbd5e1;
+}
+
+.card-section h2 {
+    color: #0f172a;
+    margin-top: 0;
+    font-size: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Блок «Теги» (display)
+   -------------------------------------------------------------------------- */
+.inline-div {
+    display: inline;
+    width: 200px;
+    height: 100px;
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 6px 12px;
+    margin-right: 5px;
+}
+
+/* 
+   ПОЯСНЕННЯ (чому width та height не діють на display: inline):
+   Згідно зі специфікацією CSS, для рядкових елементів (display: inline) властивості 
+   width та height повністю ігноруються браузером. Розміри таких елементів визначаються 
+   виключно обсягом їхнього внутрішнього вмісту (тексту) та відступами padding.
+*/
+
+.block-span {
+    display: block;
+    width: 150px;
+    background-color: #059669;
+    color: #ffffff;
+    padding: 8px 12px;
+    margin-bottom: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   4. Блок «Повторення фону» (background-repeat)
+   -------------------------------------------------------------------------- */
+.repeat-box {
+    height: 200px;
+    margin-bottom: 15px;
+    border: 2px solid #475569;
+    /* Золотиста SVG-іконка зірочки */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 24 24' fill='%23f59e0b'%3E%3Cpath d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3E%3C/svg%3E");
+    background-color: #f8fafc;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.badge {
+    display: inline-block;
+    background-color: rgba(15, 23, 42, 0.85);
+    color: #ffffff;
+    padding: 4px 10px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.bg-repeat-x {
+    background-repeat: repeat-x;
+}
+
+.bg-repeat-y {
+    background-repeat: repeat-y;
+}
+
+.bg-repeat-space {
+    background-repeat: space;
+}
+
+.bg-repeat-round {
+    background-repeat: round;
+}
+
+/* 
+   ПОЯСНЕННЯ РІЗНИЦІ МІЖ space ТА round:
+   - space: повторює зображення стільки разів, скільки воно повністю поміщається в блоці. 
+     Якщо залишається вільний простір, він рівномірно розподіляється МІЖ картинками. 
+     Самі зображення при цьому НЕ масштабуються і НЕ обрізаються.
+   - round: масштабує (розтягує або стискає) фонове зображення так, щоб у блоці помістилася 
+     точна ціла кількість повторень без будь-яких порожніх проміжків між ними.
+*/
+
+/* --------------------------------------------------------------------------
+   5. Блок «Масштабування» (background-size)
+   -------------------------------------------------------------------------- */
+.size-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.size-box {
+    width: 300px;
+    height: 200px;
+    border: 2px solid #1e293b;
+    /* Якісний векторний пейзаж з горами та сонцем (гарантовано працює) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%230284c7'/%3E%3Ccircle cx='450' cy='120' r='60' fill='%23fbbf24'/%3E%3Cpath d='M0 400l180-220 140 160 120-130 160 190z' fill='%230f766e'/%3E%3Cpath d='M0 400l120-150 160 170 180-190 140 170z' fill='%23134e4a' opacity='0.8'/%3E%3Crect y='340' width='600' height='60' fill='%230369a1'/%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #cbd5e1;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.bg-contain {
+    background-size: contain;
+}
+
+.bg-cover {
+    background-size: cover;
+}
+
+/* --------------------------------------------------------------------------
+   6. Блок «Прокручення фону» (background-attachment)
+   -------------------------------------------------------------------------- */
+.attach-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.attach-box {
+    width: 380px;
+    max-height: 150px;
+    overflow: auto; /* Додає смугу прокручування при виході тексту за межі */
+    border: 2px solid #334155;
+    padding: 15px;
+    box-sizing: border-box;
+    /* Текстурна сітка */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Crect width='20' height='20' fill='%23ffffff'/%3E%3Cpath d='0 0h20v20H0z' fill='none' stroke='%23cbd5e1' stroke-width='1'/%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: repeat;
+    background-color: #ffffff;
+}
+
+.attach-box h3 {
+    margin-top: 0;
+    font-size: 15px;
+    color: #1e3a8a;
+}
+
+.attach-box p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.bg-scroll {
+    background-attachment: scroll;
+}
+
+.bg-local {
+    background-attachment: local;
+}
+
+/* 
+   ПОЯСНЕННЯ (відмінність поведінки фону під час прокручування):
+   - scroll: фонове зображення фіксується відносно самого елемента-контейнера. 
+     При прокручуванні тексту ВСЕРЕДИНІ блоку фонове зображення залишається нерухомим.
+   - local: фонове зображення прив'язується безпосередньо до текстового вмісту. 
+     При прокручуванні тексту ВСЕРЕДИНІ блоку фоновий малюнок рухається разом із текстом.
+*/

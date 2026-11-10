@@ -1,0 +1,56 @@
+/* Завдання 1 (варіант 3) */
+
+body {
+    margin: 0;
+    font-family: Calibri, Arial, sans-serif;
+}
+
+.wrapper {
+    position: relative;
+    width: 845px;
+    height: 220px;
+    margin: 30px auto;
+}
+
+.box {
+    position: absolute;
+    box-sizing: border-box;
+    border: 3px solid #222;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 28px;
+    line-height: 36px;
+}
+
+/* Два зелені блоки поруч (нижній шар) */
+.green {
+    top: 12px;
+    width: 395px;
+    height: 193px;
+    background-color: #00b050;
+    color: #1a1a1a;
+    align-items: flex-start;
+    padding-top: 8px;
+    z-index: 1;
+}
+
+.green-left {
+    left: 15px;
+}
+
+.green-right {
+    left: 435px;
+}
+
+/* Синій блок: поверх обох зелених, посередині */
+.blue {
+    left: 188px;
+    top: 72px;
+    width: 462px;
+    height: 81px;
+    background-color: #538dd5;
+    color: #ffffff;
+    align-items: center;
+    z-index: 2;
+}

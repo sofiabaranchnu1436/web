@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.menu, .submenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    .menu li {
+        position: relative;
+    }
+
+    .menu a {
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.2s;
+    }
+
+
+.submenu {
+    position: absolute;
+    z-index: 200;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.menu li:hover > .submenu,
+.menu li:focus-within > .submenu {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* ГОРИЗОНТАЛЬНА ПАНЕЛЬ */
+.nav-h {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background-color: #555;
+    z-index: 100;
+}
+
+    .nav-h .menu:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    .nav-h .menu > li {
+        float: left;
+    }
+
+        .nav-h .menu > li.right {
+            float: right;
+        }
+
+    .nav-h .menu a {
+        display: block;
+    }
+
+    .nav-h .menu > li > a {
+        width: 70px;
+        height: 56px;
+        text-align: center;
+    }
+
+        .nav-h .menu > li > a .material-icons {
+            line-height: 56px;
+        }
+
+    .nav-h .menu > li:hover > a {
+        background-color: #777;
+    }
+
+    .nav-h .menu > li.active > a {
+        background-color: #4caf50;
+    }
+
+    .nav-h .submenu {
+        top: 100%;
+        left: 0;
+        min-width: 180px;
+        background-color: #444;
+    }
+
+    .nav-h .right > .submenu {
+        left: auto;
+        right: 0;
+    }
+
+    .nav-h .submenu .submenu {
+        top: 0;
+        left: 100%;
+    }
+
+    .nav-h .submenu a {
+        padding: 0 16px;
+        height: 44px;
+        line-height: 44px;
+    }
+
+    .nav-h .submenu li:hover > a {
+        background-color: #666;
+    }
+
+.nav-h--sticky {
+    position: sticky;
+    top: 0;
+    left: auto;
+    right: auto;
+}
+
+.text {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 76px 20px 20px;
+    line-height: 2.2;
+    font-size: 18px;
+}
+
+.hero {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #e0e0e0;
+}
+
+    .hero + .nav-h + .text {
+        padding-top: 20px;
+    }
+
+
+/* ВЕРТИКАЛЬНА ПАНЕЛЬ */
+.nav-v {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    background-color: #0069b4;
+}
+
+    .nav-v .menu a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: 40px;
+        padding: 0 14px;
+        font-size: 14px;
+    }
+
+    .nav-v .menu > li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+        .nav-v .menu > li.active > a {
+            background-color: #004f87;
+        }
+
+    .nav-v li:hover > a {
+        background-color: #0a84d6;
+    }
+
+    .nav-v .submenu {
+        top: 0;
+        left: 100%;
+        width: 200px;
+        background-color: #0a5a99;
+    }
+
+    .nav-v ~ .text {
+        max-width: none;
+        margin: 0 0 0 200px;
+        padding: 20px 30px;
+        line-height: 1.8;
+        font-size: 16px;
+    }

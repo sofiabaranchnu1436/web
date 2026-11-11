@@ -1,0 +1,117 @@
+/* ==========================================
+   БАЗОВІ СТИЛІ (Спільні для всіх пристроїв)
+   ========================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.page-container {
+  display: grid;
+  gap: 10px;
+}
+
+.block {
+  border: 2px solid #ff3b30;
+  border-radius: 4px;
+  padding: 15px;
+  background-color: #ffffff;
+  color: #333;
+  font-size: 14px;
+}
+
+.main {
+  min-height: 200px;
+}
+
+/* ==========================================
+   1. MOBILE (до 575px включно)
+   ========================================== */
+@media (max-width: 575px) {
+  .page-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================
+   2. TABLET (від 576px до 767px)
+   ========================================== */
+@media (min-width: 576px) and (max-width: 767px) {
+  .page-container {
+    grid-template-columns: 1fr 3fr; /* Зліва вузька колонка, справа ширша */
+  }
+
+  .header {
+    grid-column: 1 / -1;
+  }
+
+  .navigation {
+    grid-column: 1 / -1;
+  }
+
+  .sidebar {
+    grid-column: 1 / 2;
+    grid-row: 3;
+  }
+
+  .main {
+    grid-column: 2 / 3;
+    grid-row: 3;
+  }
+
+  .ads {
+    grid-column: 1 / 2;
+    grid-row: 4;
+  }
+
+  .footer {
+    grid-column: 2 / 3;
+    grid-row: 4;
+  }
+}
+
+/* ==========================================
+   3. DESKTOP (від 768px і більше)
+   ========================================== */
+@media (min-width: 768px) {
+  .page-container {
+    grid-template-columns: 1fr 3fr 1fr; /* 3 колонки */
+  }
+
+  .header {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .sidebar {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4; /* На всю висоту поруч із nav та main */
+  }
+
+  .navigation {
+    grid-column: 2 / 3;
+    grid-row: 2;
+  }
+
+  .main {
+    grid-column: 2 / 3;
+    grid-row: 3;
+  }
+
+  .ads {
+    grid-column: 3 / 4;
+    grid-row: 2 / 4; /* На всю висоту з правого боку */
+  }
+
+  .footer {
+    grid-column: 1 / -1;
+    grid-row: 4;
+  }
+}

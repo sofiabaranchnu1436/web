@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 1. ІНІЦІАЛІЗАЦІЯ ЛІЧИЛЬНИКА (CSS Counter) */
+.tree-grid {
+  counter-reset: blockCounter; /* Ініціалізуємо змінну лічильника */
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);  /* 6 однакових колонок */
+  grid-template-rows: repeat(12, 1fr);     /* 12 базах рядків для підпорядкування */
+  gap: 8px;
+  width: 100%;
+  max-width: 1100px;
+  height: 600px; /* Фіксована висота макета для збереження пропорцій */
+}
+
+/* 2. БАЗОВІ СТИЛІ БЛОКІВ ТА ГЕНЕРОВАНИЙ ВМІСТ */
+.tree-item {
+  background-color: #ffd000; /* Жовтий колір за макетом */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 6px;
+  counter-increment: blockCounter; /* Збільшуємо значення лічильника на 1 для кожного елемента */
+}
+
+/* Автоматична підстановка номера блоку через псевдоелемент */
+.tree-item::before {
+  content: counter(blockCounter); /* Виводимо поточний номер */
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* ==========================================
+   3. ТОЧНЕ ПОЗИЦІОНУВАННЯ БЛОКІВ ПО СІТЦІ (12 РЯДКІВ)
+   ========================================== */
+
+/* --- Колонка 1 (на всі 12 рядків) --- */
+.item-1  { grid-column: 1; grid-row: 1 / span 12; }
+
+/* --- Колонка 2 (по 6 рядків кожен) --- */
+.item-2  { grid-column: 2; grid-row: 1 / span 7; }
+.item-3  { grid-column: 2; grid-row: 8 / span 5; }
+
+/* --- Колонка 3 (по 4 рядки кожен) --- */
+.item-4  { grid-column: 3; grid-row: 1 / span 4; }
+.item-5  { grid-column: 3; grid-row: 5 / span 4; }
+.item-6  { grid-column: 3; grid-row: 9 / span 4; }
+
+/* --- Колонка 4 (по 3 рядки кожен) --- */
+.item-7  { grid-column: 4; grid-row: 1 / span 3; }
+.item-8  { grid-column: 4; grid-row: 4 / span 3; }
+.item-9  { grid-column: 4; grid-row: 7 / span 3; }
+.item-10 { grid-column: 4; grid-row: 10 / span 3; }
+
+/* --- Колонка 5 (по 2 рядки кожен) --- */
+.item-11 { grid-column: 5; grid-row: 1 / span 2; }
+.item-12 { grid-column: 5; grid-row: 3 / span 2; }
+.item-13 { grid-column: 5; grid-row: 5 / span 2; }
+.item-14 { grid-column: 5; grid-row: 7 / span 2; }
+.item-15 { grid-column: 5; grid-row: 9 / span 2; }
+.item-16 { grid-column: 5; grid-row: 11 / span 2; }
+
+/* --- Колонка 6 (по 1 рядку кожен) --- */
+.item-17 { grid-column: 6; grid-row: 1; }
+.item-18 { grid-column: 6; grid-row: 2; }
+.item-19 { grid-column: 6; grid-row: 3; }
+.item-20 { grid-column: 6; grid-row: 4; }
+.item-21 { grid-column: 6; grid-row: 5; }
+.item-22 { grid-column: 6; grid-row: 6; }
+.item-23 { grid-column: 6; grid-row: 7; }
+.item-24 { grid-column: 6; grid-row: 8; }
+.item-25 { grid-column: 6; grid-row: 9; }
+.item-26 { grid-column: 6; grid-row: 10; }
+.item-27 { grid-column: 6; grid-row: 11; }
+.item-28 { grid-column: 6; grid-row: 12; }
+
+/* ==========================================
+   4. АДАПТИВНІСТЬ ДЛЯ МАЛИХ ЕКРАНІВ
+   ========================================== */
+@media (max-width: 768px) {
+  .tree-grid {
+    height: auto;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

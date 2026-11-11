@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Завдання 3 - Погода (Flexbox)</title>
+  
+  <!-- Підключення шрифтів Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="weather-card">
+    
+    <!-- 1. Блок поточної погоди -->
+    <header class="current-weather">
+      <div class="location-info">
+        <h1 class="city">New York, NY</h1>
+        <p class="date">Tuesday, April 15th</p>
+        <p class="condition">Overcast</p>
+      </div>
+
+      <div class="temp-main">
+        <span class="temp-value">58°</span>
+      </div>
+
+      <div class="details-grid">
+        <div class="detail-item">
+          <span>Precipitation:</span> <strong>100%</strong>
+        </div>
+        <div class="detail-item">
+          <span>Humidity:</span> <strong>97%</strong>
+        </div>
+        <div class="detail-item">
+          <span>Wind:</span> <strong>4 mph SW</strong>
+        </div>
+        <div class="detail-item">
+          <span>Pollen Count:</span> <strong>36</strong>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. Список прогнозу на тиждень -->
+    <main class="forecast-list">
+      
+      <div class="forecast-row active">
+        <span class="day-name">Today</span>
+        <div class="temps">
+          <span class="high">68°</span>
+          <span class="low">36°</span>
+        </div>
+        <span class="pollen">Pollen 36</span>
+      </div>
+
+      <div class="forecast-row">
+        <span class="day-name">Wednesday</span>
+        <div class="temps">
+          <span class="high">50°</span>
+          <span class="low">39°</span>
+        </div>
+        <span class="pollen">Pollen 36</span>
+      </div>
+
+      <div class="forecast-row">
+        <span class="day-name">Thursday</span>
+        <div class="temps">
+          <span class="high">55°</span>
+          <span class="low">39°</span>
+        </div>
+        <span class="pollen">Pollen 36</span>
+      </div>
+
+      <div class="forecast-row">
+        <span class="day-name">Friday</span>
+        <div class="temps">
+          <span class="high">54°</span>
+          <span class="low">43°</span>
+        </div>
+        <span class="pollen">Pollen 36</span>
+      </div>
+
+      <div class="forecast-row">
+        <span class="day-name">Saturday</span>
+        <div class="temps">
+          <span class="high">64°</span>
+          <span class="low">46°</span>
+        </div>
+        <span class="pollen">Pollen 36</span>
+      </div>
+
+      <div class="forecast-row">
+        <span class="day-name">Sunday</span>
+        <div class="temps">
+          <span class="high">64°</span>
+          <span class="low">50°</span>
+        </div>
+        <span class="pollen">Pollen 36</span>
+      </div>
+
+      <div class="forecast-row">
+        <span class="day-name">Monday</span>
+        <div class="temps">
+          <span class="high">61°</span>
+          <span class="low">50°</span>
+        </div>
+        <span class="pollen">Pollen 36</span>
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
